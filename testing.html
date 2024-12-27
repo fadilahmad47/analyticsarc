@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Share Chart</title>
+  <style>
+    #share-button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      position: relative; /* Keeps the button in place */
+      z-index: 1; /* Ensures the button stays above the dropdown */
+    }
+
+    #share-button:hover {
+      background-color: #0056b3;
+    }
+
+    .sharedropdown {
+      height: 0px /*145px*/;
+      width: 117px;
+      background-color: red;
+      padding: 0px;
+      margin: 0px;
+      overflow: hidden;
+      transition: 0.5s all ease;
+      position: absolute; /* Dropdown opens below the button */
+      bottom: 40px; /* Positioned to expand upwards */
+      left: 0;
+    }
+
+    .sharebtn {
+      width: 100%;
+      height: 29px;
+      background-color: green;
+      border: none;
+      border-radius: 4px;
+      object-fit: cover;
+    }
+
+    .sharedropdown hr{
+      margin: 4px 0px;
+    }
+
+    .button-container {
+      position: relative;
+      display: inline-block;
+    }
+
+  </style>
+</head>
+
+<body>
+  <h1>Share Chart</h1>
+  <img id="chart" src="https://example.com/path-to-your-chart.jpg" alt="Chart" style="max-width: 100%; height: auto;">
+
+  <div class="button-container">
+    <button id="share-button">Share Chart</button>
+    <div class="sharedropdown">
+      <button class="sharebtn">WhatsApp</button>
+      <hr>
+      <button class="sharebtn">Instagram</button>
+      <hr>
+      <button class="sharebtn">Facebook</button>
+      <hr>
+      <button class="sharebtn">Gmail</button>
+    </div>
+  </div>
+
+
+  <script>
+    const chartUrl = 'https://example.com/path-to-your-chart.jpg'; // Replace with your chart image URL
+      const pageUrl = window.location.href; // Current page URL
+
+      const whatsappLink = `https://api.whatsapp.com/send?text=Check out this chart: ${chartUrl}`;
+      const facebookLink = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
+      const gmailLink = `mailto:?subject=Check out this chart&body=See the chart here: ${chartUrl}`;
+      const instagramMessage = `Open Instagram and share the image manually: ${chartUrl}`;
+
+      // Show sharing options
+      // const options = `
+      //   Share Options:
+      //   - <a href="${whatsappLink}" target="_blank">WhatsApp</a><br>
+      //   - <a href="${facebookLink}" target="_blank">Facebook</a><br>
+      //   - <a href="${gmailLink}" target="_blank">Gmail</a><br>
+      //   - ${instagramMessage}
+      // `;
+
+      // const sharePopup = window.open("", "_blank", "width=400,height=400");
+      // sharePopup.document.write(`<html><body>${options}</body></html>`);
+      // sharePopup.document.close();
+
+      const sharedropdown = document.querySelector(".sharedropdown");
+      let status = "open";
+    document.getElementById('share-button').addEventListener('click', function () {
+      if(status === "open"){
+        sharedropdown.style.height = "145px";
+        sharedropdown.style.padding = "4px";
+        status = "close";
+      }
+      else{
+        sharedropdown.style.height = "0px";
+        sharedropdown.style.padding = "0px";
+        status = "open";
+      }
+      
+      
+    });
+  </script>
+</body>
+
+</html>

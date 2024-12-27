@@ -1,0 +1,294 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ebffe8;
+}
+
+.phase1nav {
+    height: 304px;
+    width: 100%;
+    /* background-color: red; */
+    padding: 70px 128px;
+}
+
+.phase1parentflexitems {
+    display: flex;
+    justify-content: space-between;
+    height: 79px;
+}
+
+.analyticsarcimg {
+    /* width: 100%; */
+
+}
+
+.phase1search {
+    height: 38px;
+    width: 336px;
+    background-color: black;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+    color: white;
+
+}
+
+.phase1childflexitems {
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+    margin: 20px 0px;
+}
+
+.phase1searchbtn {
+    background-color: black;
+    height: 38px;
+    width: 38px;
+    border: none;
+    border-radius: 6px;
+}
+
+input[type="text"] {
+    padding-left: 20px;
+    color: white
+}
+
+.phase1headertext {
+    color: black;
+    font-family: "Montserrat";
+    font-weight: 500;
+    padding-bottom: 50px;
+}
+
+.popular {
+    height: 50px;
+    width: 100%;
+    background-color: black;
+    border-radius: 50px;
+    display: flex;
+    justify-content: flex-start;
+    padding: 15px;
+}
+
+.populartext {
+    color: rgb(255, 255, 255);
+    font-family: "Montserrat";
+    /* padding: 15px; */
+    margin: 0px 10px;
+}
+
+.phase1popular {
+    background-color: rgb(77, 77, 77);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    height: 20px;
+    width: 130px;
+    font-size: 10px;
+    transition: 0.5s all ease;
+    text-align: center;
+    padding: 3px;
+}
+
+.imgdiv {
+    width: 100%;
+    height: 232px;
+    /* background-color: red; */
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mapimg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.24;
+}
+
+.mapimgtext {
+    position: absolute;
+    font-size: 36px;
+    font-weight: 800;
+    color: black;
+    text-align: center;
+    font-family: "lora";
+}
+
+.phase2 {
+    width: 100%;
+    padding: 90px 90px;
+}
+
+.phase2parentflexitems {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.phase2childflexitems {
+    height: 395px;
+    width: 395px;
+    /* background-color: yellow; */
+    border-radius: 27px;
+}
+
+.phase2heading {
+    font-size: 25px;
+    font-family: "Poppins";
+    font-weight: 600;
+    padding-bottom: 20px;
+}
+
+.phase2subhead {
+    font-size: 19px;
+    font-family: "Poppins";
+    font-weight: 600;
+    padding-bottom: 20px;
+}
+
+.phase2body {
+    font-size: 19px;
+    font-family: "Poppins";
+    font-weight: 400;
+    padding-bottom: 20px;
+}
+
+.articleimg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(40%);
+}
+
+.phase2heading2 {
+    font-size: 22px;
+    font-family: "Poppins";
+    font-weight: 600;
+    color: white;
+    padding-bottom: 8px;
+}
+
+.phase2subhead2 {
+    font-size: 13px;
+    font-family: "Poppins";
+    font-weight: 500;
+    color: #b8b8b8;
+    padding-bottom: 8px;
+}
+
+.phase2textbox {
+    height: 345px;
+    width: 345px;
+    /* background-color: blue; */
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.phase2body2 {
+    font-size: 13px;
+    font-family: "Poppins";
+    font-weight: 400;
+    padding-bottom: 8px;
+    color: white;
+}
+
+.readlink {
+    text-decoration: none;
+    font-size: 13px;
+    font-family: "Poppins";
+    font-weight: 400;
+    /* padding-bottom: 5px; */
+    color: white;
+}
+
+.phase3 {
+    width: 100%;
+    padding: 0px 90px;
+}
+
+.phase3headtext {
+    font-size: 25px;
+    font-family: "Poppins";
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+    padding-bottom: 20px;
+}
+
+.phase3boxdiv {
+    height: 517px;
+    width: 100%;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 24px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.phase3flexbox0 {
+    /* background-color: red; */
+    height: 475px;
+    width: 475px;
+}
+
+.phase3flexbox1 {
+    /* background-color: yellow; */
+    height: 475px;
+    width: 475px;
+    border-radius: 20px;
+}
+
+.phase3heading {
+    font-size: 30px;
+    font-family: "Poppins";
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+    padding-bottom: 20px;
+}
+
+.phase3body {
+    font-size: 18px;
+    font-family: "Poppins";
+    font-weight: 400;
+    color: rgb(0, 0, 0);
+    padding-bottom: 20px;
+}
+
+.phase3unemplink {
+    text-decoration: none;
+}
+
+.linkbtn {
+    background-color: rgba(154, 63, 63, 0);
+    border: 1px solid black;
+    border-radius: 10px;
+    height: 70px;
+    width: 100%;
+    font-size: 20px;
+    transition: 0.5s all ease;
+    cursor: pointer;
+
+}
+
+.linkbtn:hover {
+    background-color: rgb(194, 194, 194);
+}
+
+.phase3img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+/* .ftr{
+    background-color: black;
+    height: ;
+} */

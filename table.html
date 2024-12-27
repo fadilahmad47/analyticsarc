@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fixed Header Table</title>
+  <style>
+    .body-container {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+
+    .table-container {
+      max-width: 1000px;
+      margin: auto;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .custom-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .table-header {
+      background-color: #333;
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    .table-header th,
+    .table-body td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .table-body tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    .table-body tr:hover {
+      background-color: #eaeaea;
+    }
+
+    .table-header th {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .table-body td {
+      font-size: 14px;
+    }
+
+    .table-container {
+      max-height: 400px;
+      overflow-y: auto;
+      background-color: #fff;
+    }
+  </style>
+</head>
+
+<body class="body-container">
+  <div class="table-container">
+    <table class="custom-table">
+      <thead class="table-header">
+        <!-- <tr>
+          <th>Country Name</th>
+          <th>2014</th>
+          <th>2015</th>
+          <th>2016</th>
+          <th>2017</th>
+          <th>2018</th>
+          <th>2019</th>
+          <th>2020</th>
+          <th>2021</th>
+          <th>2022</th>
+          <th>2023</th>
+          <th>2024</th>
+        </tr> -->
+      </thead>
+      <tbody class="table-body">
+        <!-- <tr>
+          <td>Data 1</td>
+          <td>Data 2</td>
+          <td>Data 3</td>
+          <td>Data 4</td>
+          <td>Data 1</td>
+          <td>Data 2</td>
+          <td>Data 3</td>
+          <td>Data 4</td>
+          <td>Data 1</td>
+          <td>Data 2</td>
+          <td>Data 3</td>
+          <td>Data 4</td>
+        </tr> -->
+      </tbody>
+    </table>
+  </div>
+  <script>
+    async function fetchdata() {
+      try {
+        // Fetch data from API
+        const response = await fetch('http://localhost/data_analytics_web/tableapi.php');
+        const data = await response.json();
+        console.log(data);
+
+        // Create table header dynamically
+        const tableheader = document.querySelector(".table-header");
+        const trtag = document.createElement("tr");
+        tableheader.appendChild(trtag);
+
+        const thdata = [
+          "Country Name", 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024
+        ];
+        for (let i = 0; i < thdata.length; i++) {
+          const th = document.createElement("th");
+          th.textContent = thdata[i];
+          trtag.appendChild(th);
+        }
+
+        // Populate table body with data
+        const tablebody = document.querySelector(".table-body");
+        for (let i = 0; i < data.length; i++) {
+          const trtagbody = document.createElement("tr");
+          tablebody.appendChild(trtagbody);
+
+          const rowData = [
+            data[i].country_name,
+            data[i].year_2014, data[i].year_2015, data[i].year_2016,
+            data[i].year_2017, data[i].year_2018, data[i].year_2019,
+            data[i].year_2020, data[i].year_2021, data[i].year_2022,
+            data[i].year_2023, data[i].year_2024
+          ];
+
+          for (let j = 0; j < rowData.length; j++) {
+            const td = document.createElement("td");
+            if (rowData[j] !== undefined) {
+              td.textContent = rowData[j]; // Set value if it's available
+            } else {
+              td.textContent = "N/A"; // Handle missing data
+            }
+            trtagbody.appendChild(td);
+          }
+        }
+      } catch (error) {
+        console.error("Data is not fetched: ", error);
+      }
+    }
+
+    fetchdata();
+
+  </script>
+</body>
+
+</html>
